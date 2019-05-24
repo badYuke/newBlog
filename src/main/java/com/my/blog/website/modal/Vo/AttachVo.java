@@ -5,11 +5,11 @@ import java.io.Serializable;
 public class AttachVo implements Serializable {
     private Integer id;
 
-    private String fname;
+    private String fName;
 
-    private String ftype;
+    private String fType;
 
-    private String fkey;
+    private String fKey;
 
     private Integer authorId;
 
@@ -25,28 +25,32 @@ public class AttachVo implements Serializable {
         this.id = id;
     }
 
-    public String getFname() {
-        return fname;
+    public String getfName() {
+        return fName;
     }
 
-    public void setFname(String fname) {
-        this.fname = fname;
+    public void setfName(String fName) {
+        this.fName = fName;
     }
 
-    public String getFtype() {
-        return ftype;
+    public String getfType() {
+        return fType;
     }
 
-    public void setFtype(String ftype) {
-        this.ftype = ftype;
+    public void setfType(String fType) {
+        this.fType = fType;
     }
 
-    public String getFkey() {
-        return fkey;
+    public String getfKey() {
+        return fKey;
     }
 
-    public void setFkey(String fkey) {
-        this.fkey = fkey;
+    public void setfKey(String fKey) {
+        this.fKey = fKey;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Integer getAuthorId() {

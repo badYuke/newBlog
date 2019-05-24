@@ -23,7 +23,7 @@ public class DataSource {
     /**
      * 数据库驱动名称
      */
-    private String drivercClassName;
+    private String driverClassName;
 
     /**
      * 数据库名字
@@ -50,8 +50,8 @@ public class DataSource {
         return password;
     }
 
-    public String getDrivercClassName() {
-        return drivercClassName;
+    public String getDriverClassName() {
+        return driverClassName;
     }
 
     public void setUrl(String url) {
@@ -66,8 +66,8 @@ public class DataSource {
         this.password = password;
     }
 
-    public void setDrivercClassName(String drivercClassName) {
-        this.drivercClassName = drivercClassName;
+    public void setDriverClassName(String driverClassName) {
+        this.driverClassName = driverClassName;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class DataSource {
                 "url='" + url + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", drivercClassName='" + drivercClassName + '\'' +
+                ", drivercClassName='" + driverClassName + '\'' +
                 ", dbName='" + dbName + '\'' +
                 '}';
     }

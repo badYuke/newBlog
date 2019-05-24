@@ -33,7 +33,7 @@ public class AttachServiceImpl implements IAttachService {
 
     @Override
     public AttachVo selectById(Integer id) {
-        if(null != id){
+        if (null != id) {
             return attachDao.selectByPrimaryKey(id);
         }
         return null;
@@ -42,10 +42,10 @@ public class AttachServiceImpl implements IAttachService {
     @Override
     public void save(String fname, String fkey, String ftype, Integer author) {
         AttachVo attach = new AttachVo();
-        attach.setFname(fname);
+        attach.setfName(fname);
         attach.setAuthorId(author);
-        attach.setFkey(fkey);
-        attach.setFtype(ftype);
+        attach.setfKey(fkey);
+        attach.setfType(ftype);
         attach.setCreated(DateKit.getCurrentUnixTime());
         attachDao.insertSelective(attach);
     }
@@ -53,7 +53,7 @@ public class AttachServiceImpl implements IAttachService {
     @Override
     public void deleteById(Integer id) {
         if (null != id) {
-            attachDao.deleteByPrimaryKey( id);
+            attachDao.deleteByPrimaryKey(id);
         }
     }
 }
