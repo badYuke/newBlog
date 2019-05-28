@@ -15,7 +15,7 @@ public class LogVoExample {
     private Integer offset;
 
     public LogVoExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {

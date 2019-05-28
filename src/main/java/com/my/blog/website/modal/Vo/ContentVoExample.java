@@ -15,7 +15,7 @@ public class ContentVoExample {
     private Integer offset;
 
     public ContentVoExample() {
-        oredCriteria = new ArrayList<Criteria>();
+        oredCriteria = new ArrayList<>();
     }
 
     public void setOrderByClause(String orderByClause) {

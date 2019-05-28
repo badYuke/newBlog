@@ -2,7 +2,6 @@ package com.my.blog.website.utils;
 
 import com.my.blog.website.exception.TipException;
 import com.my.blog.website.constant.WebConst;
-import com.my.blog.website.controller.admin.AttachController;
 import com.my.blog.website.modal.Vo.UserVo;
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Node;
@@ -300,15 +299,6 @@ public class TaleUtils {
         HtmlRenderer renderer = HtmlRenderer.builder().build();
         String content = renderer.render(document);
         content = Commons.emoji(content);
-
-        // TODO 支持网易云音乐输出
-//        if (TaleConst.BCONF.getBoolean("app.support_163_music", true) && content.contains("[mp3:")) {
-//            content = content.replaceAll("\\[mp3:(\\d+)\\]", "<iframe frameborder=\"no\" border=\"0\" marginwidth=\"0\" marginheight=\"0\" width=350 height=106 src=\"//music.163.com/outchain/player?type=2&id=$1&auto=0&height=88\"></iframe>");
-//        }
-        // 支持gist代码输出
-//        if (TaleConst.BCONF.getBoolean("app.support_gist", true) && content.contains("https://gist.github.com/")) {
-//            content = content.replaceAll("&lt;script src=\"https://gist.github.com/(\\w+)/(\\w+)\\.js\">&lt;/script>", "<script src=\"https://gist.github.com/$1/$2\\.js\"></script>");
-//        }
         return content;
     }
 
@@ -419,45 +409,6 @@ public class TaleUtils {
         return false;
     }
 
-    public static String getFileKey(String name) {
-        String prefix = "/upload/" + DateKit.dateFormat(new Date(), "yyyy/MM");
-        if (!new File(AttachController.CLASSPATH + prefix).exists()) {
-            new File(AttachController.CLASSPATH + prefix).mkdirs();
-        }
-
-        name = StringUtils.trimToNull(name);
-        if (name == null) {
-            return prefix + "/" + UUID.UU32() + "." + null;
-        } else {
-            name = name.replace('\\', '/');
-            name = name.substring(name.lastIndexOf("/") + 1);
-            int index = name.lastIndexOf(".");
-            String ext = null;
-            if (index >= 0) {
-                ext = StringUtils.trimToNull(name.substring(index + 1));
-            }
-            return prefix + "/" + UUID.UU32() + "." + (ext == null ? null : (ext));
-        }
-    }
-
-    /**
-     * 判断文件是否是图片类型
-     *
-     * @param imageFile
-     * @return
-     */
-    public static boolean isImage(InputStream imageFile) {
-        try {
-            Image img = ImageIO.read(imageFile);
-            if (img == null || img.getWidth(null) <= 0 || img.getHeight(null) <= 0) {
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
     /**
      * 随机数
      *
@@ -475,24 +426,5 @@ public class TaleUtils {
         }
 
         return num;
-    }
-
-    /**
-     * 获取保存文件的位置,jar所在目录的路径
-     *
-     * @return
-     */
-    public static String getUplodFilePath() {
-        String path = TaleUtils.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-        path = path.substring(1, path.length());
-        try {
-            path = java.net.URLDecoder.decode(path, "utf-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        int lastIndex = path.lastIndexOf("/") + 1;
-        path = path.substring(0, lastIndex);
-        File file = new File("");
-        return file.getAbsolutePath() + "/";
     }
 }

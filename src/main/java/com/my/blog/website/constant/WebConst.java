@@ -3,16 +3,10 @@ package com.my.blog.website.constant;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 @Component
 public class WebConst {
-    /**
-     * 存储安装信息的配置文件名称
-     */
-    public static final String INSTALL_FILE_CONF = "install.lock";
 
     public static Map<String, String> initConfig = new HashMap<>();
 
@@ -50,14 +44,4 @@ public class WebConst {
      * 点击次数超过多少更新到数据库
      */
     public static final int HIT_EXCEED = 10;
-
-    /**
-     * 上传文件最大1M
-     */
-    public static Integer MAX_FILE_SIZE = 1048576;
-
-    /**
-     * 要过滤的ip列表
-     */
-    public static final Set<String> BLOCK_IPS = new HashSet<>(16);
 }
