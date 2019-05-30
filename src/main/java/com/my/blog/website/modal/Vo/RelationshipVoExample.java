@@ -124,123 +124,14 @@ public class RelationshipVoExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andCidIsNull() {
-            addCriterion("cid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidIsNotNull() {
-            addCriterion("cid is not null");
-            return (Criteria) this;
-        }
 
         public Criteria andCidEqualTo(Integer value) {
             addCriterion("cid =", value, "cid");
             return (Criteria) this;
         }
 
-        public Criteria andCidNotEqualTo(Integer value) {
-            addCriterion("cid <>", value, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidGreaterThan(Integer value) {
-            addCriterion("cid >", value, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cid >=", value, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidLessThan(Integer value) {
-            addCriterion("cid <", value, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidLessThanOrEqualTo(Integer value) {
-            addCriterion("cid <=", value, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidIn(List<Integer> values) {
-            addCriterion("cid in", values, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidNotIn(List<Integer> values) {
-            addCriterion("cid not in", values, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidBetween(Integer value1, Integer value2) {
-            addCriterion("cid between", value1, value2, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andCidNotBetween(Integer value1, Integer value2) {
-            addCriterion("cid not between", value1, value2, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidIsNull() {
-            addCriterion("mid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidIsNotNull() {
-            addCriterion("mid is not null");
-            return (Criteria) this;
-        }
-
         public Criteria andMidEqualTo(Integer value) {
             addCriterion("mid =", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidNotEqualTo(Integer value) {
-            addCriterion("mid <>", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidGreaterThan(Integer value) {
-            addCriterion("mid >", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("mid >=", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidLessThan(Integer value) {
-            addCriterion("mid <", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidLessThanOrEqualTo(Integer value) {
-            addCriterion("mid <=", value, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidIn(List<Integer> values) {
-            addCriterion("mid in", values, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidNotIn(List<Integer> values) {
-            addCriterion("mid not in", values, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidBetween(Integer value1, Integer value2) {
-            addCriterion("mid between", value1, value2, "mid");
-            return (Criteria) this;
-        }
-
-        public Criteria andMidNotBetween(Integer value1, Integer value2) {
-            addCriterion("mid not between", value1, value2, "mid");
             return (Criteria) this;
         }
     }
